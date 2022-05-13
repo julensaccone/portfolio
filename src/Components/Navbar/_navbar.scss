@@ -1,0 +1,69 @@
+@import "./navbar-animations";
+nav {
+  height: 9rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 500;
+  .logo-js {
+    z-index: 600;
+    position: absolute;
+    animation-name: logoShifting;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    animation-delay: 2s;
+    margin: 0 auto;
+  }
+  section {
+    width: 40rem;
+    position: absolute;
+    right: 0;
+    display: flex;
+    .navbar-link {
+      margin-left: 3.5rem;
+      text-decoration: none;
+      color: #3e3e3e;
+      cursor: pointer;
+      border-bottom: 5px solid transparent;
+      animation-name: navbarAppear;
+      animation-duration: 2s;
+      animation-delay: 3s;
+      animation-fill-mode: forwards;
+      opacity: 0;
+
+      h2 {
+        width: 100%;
+        height: 100%;
+        animation-name: bounceDown;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+      }
+
+      h2:hover {
+        animation-name: bounceUp;
+        animation-duration: 0.7s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+      }
+      h2::before {
+        content: "<";
+        color: #ffc800;
+      }
+      h2::after {
+        content: "/>";
+        color: #ffc800;
+      }
+    }
+
+    .navbar-link:hover {
+      border-bottom: 5px solid #3e3e3e;
+    }
+
+    .navbar-link:nth-of-type(2) {
+      animation-delay: 3.5s;
+    }
+    .navbar-link:nth-of-type(3) {
+      animation-delay: 4s;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@keyframes logoShifting {
+  0% {
+    transform: translateX(35rem) translateY(20.5rem);
+  }
+  100% {
+    transform: translateX(0) translateY(0) scale(0.3);
+  }
+}
+@keyframes bounceDown {
+  0% {
+    transform: translateY(-0.5rem);
+  }
+  100% {
+    transform: translateY(0rem);
+  }
+}
+@keyframes bounceUp {
+  0% {
+    transform: translateY(0rem);
+  }
+  50% {
+    transform: translateY(-0.5rem);
+  }
+  100% {
+    transform: translateY(0rem);
+  }
+}
+@keyframes navbarAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(-100rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

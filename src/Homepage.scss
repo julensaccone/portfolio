@@ -1,0 +1,131 @@
+h1 {
+  font-size: 5rem;
+  color: #fff;
+}
+.J {
+  animation-name: shiftJ;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  transform: translateX(6ch);
+  animation-delay: 2.5s;
+  opacity: 0;
+}
+
+.S {
+  animation-name: shiftS;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  transform: translateX(2ch);
+  animation-delay: 2.5s;
+  opacity: 0;
+}
+
+.heading {
+  width: 100%;
+  height: 100%;
+}
+.greetings,
+.profile-image-container {
+  width: 50%;
+  max-width: 50%;
+}
+
+.greetings {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+  padding-left: 10%;
+
+  .introduction {
+    background-color: #fff;
+    color: #3e3e3e;
+    border-radius: 10px;
+    padding: 0 1ch 0 1ch;
+  }
+}
+
+@keyframes shiftJ {
+  0% {
+    transform: translateX(6ch);
+  }
+  2% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes shiftS {
+  0% {
+    transform: translateX(2ch);
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0ch);
+    opacity: 1;
+  }
+}
+.title {
+  font-size: 5rem;
+  display: flex;
+  .J,
+  .S {
+    color: #ffc800;
+  }
+
+  .first-name {
+    margin-right: 0.5ch;
+  }
+}
+.fade-in {
+  opacity: 0;
+  animation-name: fadeInTitle;
+  animation-duration: 2s;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+}
+.initials {
+  display: flex;
+}
+
+@keyframes fadeInTitle {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container {
+  padding: 0 10rem 0 10rem;
+}
+
+h3 {
+  margin: 0;
+}
+h3::before {
+  content: "<";
+  color: #ffc800;
+}
+h3::after {
+  content: "/>";
+  color: #ffc800;
+}
+.back-to-top {
+  position: fixed;
+  width: 5rem;
+  float: right;
+  right: 5rem;
+  top: 41rem;
+  z-index: 400;
+  &:hover {
+    transform: scale(110%);
+  }
+}
