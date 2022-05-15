@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
 h1 {
   font-size: 5rem;
   color: #fff;
+  font-family: Bebas Neue;
 }
 .J {
   animation-name: shiftJ;
@@ -127,5 +130,336 @@ h3::after {
   z-index: 400;
   &:hover {
     transform: scale(110%);
+  }
+}
+
+.container1 {
+  .description {
+    margin: 2rem;
+    display: flex;
+  }
+  h3,
+  article,
+  .circle-image,
+  .list {
+    opacity: 0;
+    transition: 0.5s all ease;
+  }
+  h3 {
+    transform: translateY(5rem);
+  }
+  article {
+    width: 50ch;
+    max-width: 60ch;
+    font-size: 1.5rem;
+    transform: translateX(5rem);
+  }
+  .circle-image {
+    width: 15rem;
+    height: 15rem;
+    overflow: hidden;
+    border-radius: 75%;
+    transform: translateX(-5rem);
+    box-shadow: 0px 0px 10px black;
+    border: 5px solid #ffc800;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transform: translateY(5rem);
+    &::after {
+      content: "]";
+      color: #f40076;
+      font-size: 2rem;
+      font-weight: 800;
+    }
+
+    ul {
+      list-style: none;
+      li {
+        display: flex;
+        align-items: center;
+        padding: 0.5ch 4ch;
+        font-size: 1.5rem;
+        &::after {
+          content: ",";
+          font-size: 2rem;
+          font-weight: 800;
+          margin-left: 0.2ch;
+        }
+        &:last-of-type::after {
+          content: "";
+        }
+      }
+    }
+    &.languages {
+      float: left;
+    }
+    &.hobbies {
+      float: right;
+    }
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding-left: 3rem;
+  }
+  h4 {
+    padding-top: 2rem;
+    font-size: 2rem;
+    &:before {
+      content: "const";
+      color: #60afff;
+      margin-right: 1ch;
+    }
+    &:after {
+      content: "[";
+      color: #f40076;
+      margin-left: 1ch;
+    }
+  }
+
+  .flags {
+    width: 4rem;
+    height: auto;
+    border: 4px solid #3e3e3e;
+    border-radius: 8px;
+    margin-right: 2ch;
+  }
+  &.active {
+    .circle-image,
+    article {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    h3 {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .list {
+      opacity: 1;
+      transform: translateY(0);
+      &.languages {
+        transition-delay: 1s;
+      }
+      &.hobbies {
+        transition-delay: 2s;
+      }
+    }
+  }
+}
+.container2 {
+  .skill-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+    .skill {
+      margin: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      &:nth-of-type(2).skill-circle-image {
+        transition-delay: 2s;
+      }
+      &:nth-of-type(3).skill-circle-image {
+        transition-delay: 4s;
+      }
+      &:nth-of-type(4).skill-circle-image {
+        transition-delay: 6s;
+      }
+
+      .skill-circle-image {
+        display: block;
+        width: 8rem;
+        height: 8rem;
+        overflow: hidden;
+        border-radius: 50%;
+        background-color: #ede9e9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid #ffc800;
+        margin-bottom: 1rem;
+
+        .skill-image {
+          width: 80%;
+          height: auto;
+        }
+      }
+
+      .skill-title {
+        color: #3e3e3e;
+        background-color: #ede9e9;
+        border-radius: 20px;
+        padding: 0 1ch;
+        &:hover {
+          background-color: #f40076;
+          color: #ede9e9;
+          border: 0.5px solid #fff;
+        }
+      }
+    }
+  }
+  .list-other-skills {
+    display: flex;
+    .secondary-skill {
+      color: #3e3e3e;
+      background-color: #ede9e9;
+      border-radius: 20px;
+      padding: 0 1ch;
+      margin-left: 1rem;
+      font-size: 1.5rem;
+      &:hover {
+        background-color: #f40076;
+        color: #ede9e9;
+        border: 0.5px solid #fff;
+      }
+      opacity: 0;
+      transition: 1s all ease;
+      transform: translateX(-5rem);
+    }
+  }
+
+  .skill-circle-image {
+    opacity: 0;
+    transform: scale(0);
+    transition: 1s all ease;
+  }
+  .skill-title {
+    opacity: 0;
+    transition: 1s all ease;
+    transform: translateX(-5rem);
+  }
+
+  &.active {
+    .skill-circle-image {
+      opacity: 1;
+      transform: scale(100%) rotate(360deg);
+    }
+    .skill-title {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .secondary-skill {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+.container3 {
+  .cards {
+    display: flex;
+    width: 100%;
+  }
+  .card {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 20rem;
+    height: 25rem;
+    box-shadow: 0px 0px 8px black;
+    // border: 3px solid #3e3e3e;
+    margin: 4rem 2rem;
+    border-radius: 30px 30px;
+    background: radial-gradient(#111 50%, #000 100%);
+    overflow: hidden;
+    img {
+      max-width: 100%;
+      height: 100%;
+      transform: scale(1.2);
+      transition: all 0.3s ease-out;
+      position: relative;
+      bottom: 0;
+      object-fit: cover;
+      // border-bottom: 2px solid #3e3e3e;
+    }
+
+    .card-description {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 2rem;
+      text-align: center;
+      color: #fff;
+      font-size: 1rem;
+
+      h5 {
+        font-size: 2rem;
+        transform: translateY(5rem);
+        opacity: 0;
+      }
+      p {
+        transform: translateY(5rem);
+        opacity: 0;
+      }
+      a {
+        color: #ede9e9;
+        background-color: #f40076;
+        display: inline-block;
+        padding: 0.6rem;
+        margin-top: 1rem;
+        margin-bottom: 0.5;
+        border-radius: 12px;
+        text-decoration: none;
+        transform: translateY(5rem);
+        opacity: 0;
+        &:hover {
+          background-color: #f40076b3;
+        }
+      }
+    }
+    &:hover {
+      img {
+        transform: scale(1);
+        opacity: 0.3;
+      }
+      h5 {
+        transform: translateY(0);
+        transition: all 0.3s ease-out;
+        opacity: 1;
+      }
+      p {
+        transform: translateY(0);
+        transition: all 0.3s ease-out 0.1s;
+        opacity: 1;
+      }
+      a {
+        transform: translateY(0);
+        transition: all 0.3s ease-out 0.2s;
+        opacity: 1;
+      }
+    }
+  }
+  .cards {
+    transform: translateX(-10rem);
+    opacity: 0;
+    transition: 0.5s all ease-out;
+  }
+  h3 {
+    transform: translatey(10rem);
+    opacity: 0;
+    transition: 0.5s all ease-out;
+  }
+
+  &.active {
+    .cards {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    h3 {
+      transform: translatey(0);
+      opacity: 1;
+    }
   }
 }

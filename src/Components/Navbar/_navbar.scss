@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Coda+Caption&display=swap");
 @import "./navbar-animations";
 nav {
   height: 9rem;
@@ -15,9 +16,9 @@ nav {
     margin: 0 auto;
   }
   section {
-    width: 40rem;
+    width: 50rem;
     position: absolute;
-    right: 0;
+    right: 3rem;
     display: flex;
     .navbar-link {
       margin-left: 3.5rem;
@@ -37,6 +38,7 @@ nav {
         animation-name: bounceDown;
         animation-duration: 0.5s;
         animation-fill-mode: forwards;
+        // font-family: "Bevan", cursive;
       }
 
       h2:hover {
@@ -60,10 +62,13 @@ nav {
     }
 
     .navbar-link:nth-of-type(2) {
-      animation-delay: 3.5s;
+      animation-delay: 3.3s;
     }
     .navbar-link:nth-of-type(3) {
-      animation-delay: 4s;
+      animation-delay: 3.5s;
+    }
+    .navbar-link:nth-of-type(4) {
+      animation-delay: 3.7s;
     }
   }
 }

@@ -17,10 +17,13 @@ const Navbar = () => {
       <img className='logo-js' src={jsLogo} alt='logo' />
       <section>
         <a onClick={ScrollDownTo()} className='navbar-link' href='#About_me'>
-          <h2>AboutMe</h2>
+          <h2>About_Me</h2>
         </a>
         <a className='navbar-link' href='#Skills'>
           <h2>Skills</h2>
+        </a>
+        <a className='navbar-link' href='#Projects'>
+          <h2>Projects</h2>
         </a>
         <a className='navbar-link' href='#Contact'>
           <h2>Contact</h2>

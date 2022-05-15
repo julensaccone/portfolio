@@ -6,7 +6,11 @@ const Insertion = ({ id, type, height, color, children }) => {
     return (
       <>
         {/* <div id={id} className='upper-board left'></div> */}
-        <div className='insertion oblique-left' style={{ height: height }}>
+        <div
+          id={id}
+          className='insertion oblique-left'
+          style={{ height: height }}
+        >
           {children}
         </div>
         {/* <div className='bottom-board left'></div> */}
