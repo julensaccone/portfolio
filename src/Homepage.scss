@@ -1,5 +1,47 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
+.progress-bar {
+  --scrollAmount: 0%;
+  background-image: linear-gradient(
+    to left,
+    #ffc800,
+    #edba00,
+    #dbac00,
+    #ca9e00,
+    #b99100
+  );
+  width: var(--scrollAmount);
+  height: 0.7rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 600;
+}
+
+.nav-side-bar {
+  position: fixed;
+  left: 3rem;
+  top: 50%;
+  height: auto;
+  width: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  z-index: 400;
+  .circle {
+    margin: 1rem 0 1rem 0;
+    clip-path: circle(50% at 50% 50%);
+    background-color: #dbac00;
+    width: 1rem;
+    display: inline-block;
+    height: 1rem;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
+}
+
 h1 {
   font-size: 5rem;
   color: #fff;
@@ -122,11 +164,12 @@ h3::after {
   color: #ffc800;
 }
 .back-to-top {
-  position: fixed;
+  position: sticky;
   width: 5rem;
   float: right;
   right: 5rem;
   top: 41rem;
+  margin-bottom: 10rem;
   z-index: 400;
   &:hover {
     transform: scale(110%);
@@ -248,10 +291,10 @@ h3::after {
       opacity: 1;
       transform: translateY(0);
       &.languages {
-        transition-delay: 1s;
+        transition-delay: 0.5s;
       }
       &.hobbies {
-        transition-delay: 2s;
+        transition-delay: 1s;
       }
     }
   }
@@ -414,6 +457,7 @@ h3::after {
         text-decoration: none;
         transform: translateY(5rem);
         opacity: 0;
+        cursor: pointer;
         &:hover {
           background-color: #f40076b3;
         }
@@ -462,4 +506,114 @@ h3::after {
       opacity: 1;
     }
   }
+}
+.container4 {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 0;
+  .contacts {
+    font-size: 3rem;
+  }
+}
+
+.wrapper {
+  position: absolute;
+  right: 10rem;
+}
+.wrapper .button {
+  text-decoration: none;
+  color: #3e3e3e;
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  float: left;
+  margin: 0 5px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:hover {
+  width: 200px;
+}
+.wrapper .button .icon {
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  border-radius: 50px;
+  box-sizing: border-box;
+  line-height: 60px;
+  transition: all 0.3s ease-out;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+.wrapper .button:nth-child(1):hover {
+  .icon {
+    background: #dbac00;
+  }
+  span {
+    color: #dbac00;
+  }
+}
+.wrapper .button:nth-child(2):hover {
+  .icon {
+    background: #0c64c4;
+  }
+  span {
+    color: #0c64c4;
+  }
+}
+.wrapper .button:nth-child(3):hover {
+  .icon {
+    background: #ff0000;
+  }
+  span {
+    color: #ff0000;
+  }
+}
+.wrapper .button:nth-child(4):hover {
+  .icon {
+    background: #333;
+  }
+  span {
+    color: #333;
+  }
+}
+
+.wrapper .button .icon i {
+  font-size: 25px;
+  line-height: 60px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:hover .icon i {
+  color: #fff;
+}
+.wrapper .button span {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 60px;
+  margin-left: 10px;
+  transition: all 0.3s ease-out;
+}
+
+.container4 {
+  &.active {
+    height: 20rem;
+    .form-mail {
+      display: block;
+    }
+  }
+}
+.form-mail {
+  display: flex;
+  flex-direction: column;
+  display: none;
 }

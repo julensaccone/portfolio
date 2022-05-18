@@ -1,6 +1,6 @@
 import "./_insertion.scss";
 
-const Insertion = ({ id, type, height, color, children }) => {
+const Insertion = ({ id, type, height, color, padding, children }) => {
   //type 1: container oblique to the left
   if (type === 1) {
     return (
@@ -41,7 +41,7 @@ const Insertion = ({ id, type, height, color, children }) => {
       <div
         id={id}
         className={color === "light" ? "insertion light" : "insertion dark"}
-        style={{ height: height }}
+        style={{ height: height, padding: padding }}
       >
         {children}
       </div>

@@ -1,7 +1,8 @@
 .insertion {
   width: 100%;
   height: 35rem;
-  background-color: #3e3e3e;
+  // background-color: #3e3e3e;
+  background-color: #343131;
   padding-top: 5rem;
   .firstName,
   .lastName {
@@ -22,11 +23,8 @@
     }
   }
 
-  &.dark {
-    background-color: #3e3e3e;
-    h3 {
-      color: white;
-    }
+  &.dark h3 {
+    color: white;
   }
   &.v-shape {
     clip-path: polygon(0% 0%, 50% 12%, 100% 0, 100% 88%, 50% 100%, 0% 88%);

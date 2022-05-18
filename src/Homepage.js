@@ -13,6 +13,11 @@ import spain from "./images/spain.png";
 import uk from "./images/uk.png";
 import appleRemakeProject from "./images/apple_website_remake.png";
 import parallax from "./images/parallax_background1.jpg";
+import githubLogo from "./images/github_icon.svg";
+import gmailLogo from "./images/gmail_icon.svg";
+import { SiGmail } from "react-icons/si";
+import pdf from "./files/JulenSaccone_CV.pdf";
+import optimalHeapsort from "./images/optimalHeapsort.png";
 
 function Homepage() {
   //Get the button
@@ -29,6 +34,19 @@ function Homepage() {
 
   function reveal() {
     var container1 = document.querySelectorAll(".container");
+    let docElem = document.documentElement,
+      docBody = document.body,
+      scrollTop = docElem["scrollTop"] || docBody["scrollTop"],
+      scrollBottom =
+        (docElem["scrollHeight"] || docBody["scrollHeight"]) -
+        window.innerHeight,
+      scrollPercent = (scrollTop / scrollBottom) * 100 + "%";
+    console.log(scrollPercent);
+
+    document
+      .getElementById("progress-bar")
+      .style.setProperty("--scrollAmount", scrollPercent);
+
     for (var i = 0; i < container1.length; i++) {
       var windowHeight = window.innerHeight;
       var elementTop = container1[i].getBoundingClientRect().top;
@@ -46,6 +64,12 @@ function Homepage() {
   return (
     <>
       <Navbar />
+      <div id='progress-bar' className='progress-bar'></div>
+      {/* <div className='nav-side-bar'>
+        <a className='circle'>.</a>
+        <a className='circle'>.</a>
+        <a className='circle'>.</a>
+      </div> */}
       <Insertion id='parallax' type={1} color='dark'>
         <div className='heading'>
           <div className='greetings'>
@@ -83,15 +107,15 @@ function Homepage() {
                 <h4>Languages =</h4>
                 <ul>
                   <li>
-                    <img class='flags' src={italy} />
+                    <img className='flags' src={italy} />
                     <p>Italian</p>
                   </li>
                   <li>
-                    <img class='flags' src={spain} />
+                    <img className='flags' src={spain} />
                     <p>Spanish</p>
                   </li>
                   <li>
-                    <img class='flags' src={uk} />
+                    <img className='flags' src={uk} />
                     <p>English</p>
                   </li>
                 </ul>
@@ -136,6 +160,13 @@ function Homepage() {
           <h3>Projects</h3>
           <div className='cards'>
             <Card
+              imagePath={optimalHeapsort}
+              cardTitle='Research on sorting algorithms'
+              cardText='implementation in C++ of Optimal Heapsort, which is a more efficient version of the famous sorting algorithm Heapsort. '
+            />
+
+            <Card
+              link='https://github.com/julensaccone/apple_web_site_react'
               imagePath={appleRemakeProject}
               cardTitle='Apple website'
               cardText='A remake of apple website but using React.'
@@ -145,19 +176,82 @@ function Homepage() {
               cardTitle='Parallax website'
               cardText='making a website with a parallax effect using CSS only.'
             />
-            <Card />
           </div>
         </div>
       </Insertion>
-      <Insertion id='Contact' type={3} height='40rem' color='dark'>
-        <div className='container'>
-          <h3>Contacts</h3>
+      <Insertion
+        id='Contact'
+        type={3}
+        height='7rem'
+        color='dark'
+        padding='1rem'
+      >
+        <div className='container container4 active'>
+          <h3 className='contacts'>Contacts</h3>
+
+          <div className='wrapper'>
+            <a
+              href={pdf}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='button'
+            >
+              <div className='icon'>
+                <i class='fa-solid fa-file-pdf'></i>
+              </div>
+              <span>Resume</span>
+            </a>
+            <div className='button'>
+              <div className='icon'>
+                <i className='fa-brands fa-linkedin fa-lg'></i>
+              </div>
+              <span>LinkedIn</span>
+            </div>
+            <a
+              href='mailto:julen.saccone@gmail.com'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='button'
+            >
+              <div className='icon'>
+                <i className='fa-solid fa-envelope fa-lg'></i>
+              </div>
+              <span>Gmail</span>
+            </a>
+            <a
+              href='https://github.com/julensaccone'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='button'
+            >
+              <div className='icon'>
+                <i className='fab fa-github'></i>
+              </div>
+              <span>Github</span>
+            </a>
+          </div>
         </div>
+        <form className='form-mail'>
+          <label>Object</label>
+          <input placeholder='Object'></input>
+          <label>Content</label>
+          <input placeholder='content'></input>
+        </form>
       </Insertion>
     </>
   );
 }
 
+const Social = ({ icon, name, iconName }) => {
+  return (
+    <button className='button'>
+      <div className='icon'>
+        <img src={icon} alt='logo' />
+      </div>
+      <span>{name}</span>
+    </button>
+  );
+};
 const Skill = ({ skill, style, pathImage }) => {
   return (
     <div className='skill' style={style}>
@@ -169,14 +263,24 @@ const Skill = ({ skill, style, pathImage }) => {
   );
 };
 
-const Card = ({ imagePath, cardTitle, cardText }) => {
+const Card = ({ link, imagePath, cardTitle, cardText }) => {
   return (
     <div className='card'>
       <img src={imagePath} />
       <div className='card-description'>
         <h5>{cardTitle}</h5>
         <p>{cardText}</p>
-        <a href='#'>Open Project</a>
+        <a
+          onClick={() => {
+            if (!link) {
+              window.alert("Still working on it...");
+            }
+          }}
+          href={link}
+          target='_blank'
+        >
+          Open Project
+        </a>
       </div>
     </div>
   );

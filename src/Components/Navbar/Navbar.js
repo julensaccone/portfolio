@@ -14,7 +14,14 @@ const Navbar = () => {
 
   return (
     <nav>
-      <img className='logo-js' src={jsLogo} alt='logo' />
+      <img
+        onClick={() => {
+          window.location.reload();
+        }}
+        className='logo-js'
+        src={jsLogo}
+        alt='logo'
+      />
       <section>
         <a onClick={ScrollDownTo()} className='navbar-link' href='#About_me'>
           <h2>About_Me</h2>
