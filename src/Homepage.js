@@ -16,7 +16,7 @@ import parallax from "./images/parallax_background1.jpg";
 import githubLogo from "./images/github_icon.svg";
 import gmailLogo from "./images/gmail_icon.svg";
 import { SiGmail } from "react-icons/si";
-import pdf from "./files/JulenSaccone_CV.pdf";
+import pdf from "./files/JulenSaccone_Resume.pdf";
 import optimalHeapsort from "./images/optimalHeapsort.png";
 
 function Homepage() {
