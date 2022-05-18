@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.f9596df1.css",
+    "main.js": "/portfolio/static/js/main.34831a0b.js",
+    "static/media/apple_website_remake.png": "/portfolio/static/media/apple_website_remake.585ae4733098eb3f99c1.png",
+    "static/media/optimalHeapsort.png": "/portfolio/static/media/optimalHeapsort.41015e4a14cfdfd7c1ea.png",
+    "static/media/profile-pic.jpg": "/portfolio/static/media/profile-pic.a07fea0ab03b97329523.jpg",
+    "static/media/React_logo.png": "/portfolio/static/media/React_logo.1d385d14e08b2ed7362a.png",
+    "static/media/parallax_background1.jpg": "/portfolio/static/media/parallax_background1.1721f211e1b053df4f8c.jpg",
+    "static/media/JulenSaccone_CV.pdf": "/portfolio/static/media/JulenSaccone_CV.f96c6fc4da0c081669fb.pdf",
+    "static/media/logoJS.gif": "/portfolio/static/media/logoJS.1776ef3b763922ca5ea1.gif",
+    "static/media/HTML5_logo.png": "/portfolio/static/media/HTML5_logo.b7d94634abe3d55dc16f.png",
+    "static/media/background2.jpg": "/portfolio/static/media/background2.c18d167ec16747d50574.jpg",
+    "static/media/JavaScript_logo.png": "/portfolio/static/media/JavaScript_logo.06db899511002443efde.png",
+    "static/media/github_icon.svg": "/portfolio/static/media/github_icon.833b63e28cadf07403bc81451d30b858.svg",
+    "static/media/gmail_icon.svg": "/portfolio/static/media/gmail_icon.ca8cf6fc09e5a0a93941446a56f5d391.svg",
+    "static/media/CSS3_logo.svg": "/portfolio/static/media/CSS3_logo.632b6d133bdfb6cde391377b68148070.svg",
+    "index.html": "/portfolio/index.html",
+    "main.f9596df1.css.map": "/portfolio/static/css/main.f9596df1.css.map",
+    "main.34831a0b.js.map": "/portfolio/static/js/main.34831a0b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f9596df1.css",
+    "static/js/main.34831a0b.js"
+  ]
+}
