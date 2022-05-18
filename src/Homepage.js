@@ -13,11 +13,10 @@ import spain from "./images/spain.png";
 import uk from "./images/uk.png";
 import appleRemakeProject from "./images/apple_website_remake.png";
 import parallax from "./images/parallax_background1.jpg";
-import githubLogo from "./images/github_icon.svg";
-import gmailLogo from "./images/gmail_icon.svg";
-import { SiGmail } from "react-icons/si";
 import pdf from "./files/JulenSaccone_Resume.pdf";
 import optimalHeapsort from "./images/optimalHeapsort.png";
+
+let self = "#";
 
 function Homepage() {
   //Get the button
@@ -84,7 +83,7 @@ function Homepage() {
           <div className='profile-image-container'></div>
         </div>
       </Insertion>
-      <a href='#' id='back-to-top' className='back-to-top'>
+      <a href={self} id='back-to-top' className='back-to-top'>
         <IconContext.Provider value={{ color: "#ffc800", size: "5rem" }}>
           <HiArrowCircleUp />
         </IconContext.Provider>
@@ -94,7 +93,7 @@ function Homepage() {
           <h3>About me</h3>
           <div className='description'>
             <div className='circle-image'>
-              <img src={profilePic} />
+              <img src={profilePic} alt='profilePic' />
             </div>
             <section className='content'>
               <article>
@@ -107,15 +106,15 @@ function Homepage() {
                 <h4>Languages =</h4>
                 <ul>
                   <li>
-                    <img className='flags' src={italy} />
+                    <img className='flags' src={italy} alt='Italian flag' />
                     <p>Italian</p>
                   </li>
                   <li>
-                    <img className='flags' src={spain} />
+                    <img className='flags' src={spain} alt='Spanish flag' />
                     <p>Spanish</p>
                   </li>
                   <li>
-                    <img className='flags' src={uk} />
+                    <img className='flags' src={uk} alt='English flag' />
                     <p>English</p>
                   </li>
                 </ul>
@@ -243,21 +242,21 @@ function Homepage() {
   );
 }
 
-const Social = ({ icon, name, iconName }) => {
-  return (
-    <button className='button'>
-      <div className='icon'>
-        <img src={icon} alt='logo' />
-      </div>
-      <span>{name}</span>
-    </button>
-  );
-};
+// const Social = ({ icon, name, iconName }) => {
+//   return (
+//     <button className='button'>
+//       <div className='icon'>
+//         <img src={icon} alt='logo' />
+//       </div>
+//       <span>{name}</span>
+//     </button>
+//   );
+// };
 const Skill = ({ skill, style, pathImage }) => {
   return (
     <div className='skill' style={style}>
       <div className='skill-circle-image'>
-        <img className='skill-image' src={pathImage} />
+        <img className='skill-image' src={pathImage} alt='skill-image' />
       </div>
       <h2 className='skill-title'>{skill}</h2>
     </div>
@@ -267,7 +266,7 @@ const Skill = ({ skill, style, pathImage }) => {
 const Card = ({ link, imagePath, cardTitle, cardText }) => {
   return (
     <div className='card'>
-      <img src={imagePath} />
+      <img src={imagePath} alt={link} />
       <div className='card-description'>
         <h5>{cardTitle}</h5>
         <p>{cardText}</p>
@@ -279,6 +278,7 @@ const Card = ({ link, imagePath, cardTitle, cardText }) => {
           }}
           href={link}
           target='_blank'
+          rel='noopener noreferrer'
         >
           Open Project
         </a>
