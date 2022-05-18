@@ -160,6 +160,7 @@ function Homepage() {
           <h3>Projects</h3>
           <div className='cards'>
             <Card
+              link='https://github.com/julensaccone/optimalHeapsort'
               imagePath={optimalHeapsort}
               cardTitle='Research on sorting algorithms'
               cardText='implementation in C++ of Optimal Heapsort, which is a more efficient version of the famous sorting algorithm Heapsort. '
