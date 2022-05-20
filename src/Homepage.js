@@ -88,47 +88,47 @@ function Homepage() {
           <HiArrowCircleUp />
         </IconContext.Provider>
       </a>
-      <Insertion id='About_me' classe='about-me' height='80rem' color='light'>
+      <Insertion id='About_me' classe='about-me' height='auto' color='light'>
         <div className='container container1'>
           <h3>About me</h3>
           <div className='description'>
             <div className='circle-image'>
               <img src={profilePic} alt='profilePic' />
             </div>
-            <section className='content'>
-              <article>
-                Hello there, this is Julen. I'm based in Milan and I'm half
-                italian and half spanish (basque country actually). I just
-                graduated at University of Milan (Italy) and after that I
-                focused on front end web developing.
-              </article>
-              <div className='list languages'>
-                <h4>Languages =</h4>
-                <ul>
-                  <li>
-                    <img className='flags' src={italy} alt='Italian flag' />
-                    <p>Italian</p>
-                  </li>
-                  <li>
-                    <img className='flags' src={spain} alt='Spanish flag' />
-                    <p>Spanish</p>
-                  </li>
-                  <li>
-                    <img className='flags' src={uk} alt='English flag' />
-                    <p>English</p>
-                  </li>
-                </ul>
-              </div>
-              <div className='list hobbies'>
-                <h4>Hobbies =</h4>
-                <ul>
-                  <li>Sport: Football, Gym</li>
-                  <li>Art: Music, Drawing, Photography, Cinema</li>
-                  <li>Gaming</li>
-                  <li>Travel</li>
-                </ul>
-              </div>
-            </section>
+            {/* <section className='content'> */}
+            <article className='content'>
+              Hello there, this is Julen. I'm based in Milan and I'm half
+              italian and half spanish (basque country actually). I just
+              graduated at University of Milan (Italy) and after that I focused
+              on front end web developing.
+            </article>
+            <div className='list languages'>
+              <h4>Languages =</h4>
+              <ul>
+                <li>
+                  <img className='flags' src={italy} alt='Italian flag' />
+                  <p>Italian</p>
+                </li>
+                <li>
+                  <img className='flags' src={spain} alt='Spanish flag' />
+                  <p>Spanish</p>
+                </li>
+                <li>
+                  <img className='flags' src={uk} alt='English flag' />
+                  <p>English</p>
+                </li>
+              </ul>
+            </div>
+            <div className='list hobbies'>
+              <h4>Hobbies =</h4>
+              <ul>
+                <li>Sport: Football, Gym</li>
+                <li>Art: Music, Drawing, Photography, Cinema</li>
+                <li>Gaming</li>
+                <li>Travel</li>
+              </ul>
+            </div>
+            {/* </section> */}
           </div>
         </div>
       </Insertion>
@@ -247,7 +247,7 @@ const Skill = ({ skill, style, pathImage }) => {
   return (
     <div className='skill' style={style}>
       <div className='skill-circle-image'>
-        <img className='skill-image' src={pathImage} alt='skill-image' />
+        <img className='skill-image' src={pathImage} alt='skill' />
       </div>
       <h2 className='skill-title'>{skill}</h2>
     </div>

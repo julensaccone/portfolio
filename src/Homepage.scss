@@ -46,6 +46,9 @@ h1 {
   font-size: 5rem;
   color: #fff;
   font-family: Bebas Neue;
+  @media (max-width: 687px) {
+    font-size: 3rem;
+  }
 }
 .J {
   animation-name: shiftJ;
@@ -182,7 +185,20 @@ h3::after {
 .container1 {
   .description {
     margin: 2rem;
-    display: flex;
+    display: grid;
+    grid-template-areas:
+      "image desc"
+      ". lang"
+      ". hob";
+  }
+
+  @media (max-width: "833px") {
+    .description {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
   }
   h3,
   article,
@@ -200,6 +216,7 @@ h3::after {
     transform: translateX(5rem);
   }
   .circle-image {
+    grid-area: image;
     width: 15rem;
     height: 15rem;
     overflow: hidden;
@@ -250,17 +267,19 @@ h3::after {
       }
     }
     &.languages {
+      grid-area: lang;
       float: left;
     }
     &.hobbies {
+      grid-area: hob;
       float: right;
     }
   }
   .content {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
+    grid-area: desc;
     padding-left: 3rem;
+    display: flex;
+    align-items: center;
   }
   h4 {
     padding-top: 2rem;
@@ -293,6 +312,9 @@ h3::after {
     h3 {
       opacity: 1;
       transform: translateY(0);
+      @media (max-width: 687px) {
+        text-align: center;
+      }
     }
     .list {
       opacity: 1;
