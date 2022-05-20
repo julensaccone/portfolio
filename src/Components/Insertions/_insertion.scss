@@ -18,6 +18,9 @@
       font-size: 4rem;
       text-align: center;
     }
+    @media (max-width: 552px) {
+      font-size: 3rem;
+    }
     @media (max-width: 437px) {
       font-size: 2rem;
     }

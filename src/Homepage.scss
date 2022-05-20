@@ -184,7 +184,7 @@ h3::after {
 
 .container1 {
   .description {
-    margin: 2rem;
+    margin: 2rem 0;
     display: grid;
     grid-template-areas:
       "image desc"
@@ -214,6 +214,10 @@ h3::after {
     max-width: 60ch;
     font-size: 1.5rem;
     transform: translateX(5rem);
+
+    @media (max-width: 564px) {
+      font-size: 1.2rem;
+    }
   }
   .circle-image {
     grid-area: image;
