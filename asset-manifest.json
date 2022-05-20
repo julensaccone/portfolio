@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.f9596df1.css",
-    "main.js": "/portfolio/static/js/main.50e1dae6.js",
+    "main.css": "/portfolio/static/css/main.d9e18fdd.css",
+    "main.js": "/portfolio/static/js/main.e4857fbe.js",
     "static/media/apple_website_remake.png": "/portfolio/static/media/apple_website_remake.585ae4733098eb3f99c1.png",
     "static/media/optimalHeapsort.png": "/portfolio/static/media/optimalHeapsort.41015e4a14cfdfd7c1ea.png",
     "static/media/profile-pic.jpg": "/portfolio/static/media/profile-pic.a07fea0ab03b97329523.jpg",
@@ -14,11 +14,11 @@
     "static/media/JavaScript_logo.png": "/portfolio/static/media/JavaScript_logo.06db899511002443efde.png",
     "static/media/CSS3_logo.svg": "/portfolio/static/media/CSS3_logo.632b6d133bdfb6cde391377b68148070.svg",
     "index.html": "/portfolio/index.html",
-    "main.f9596df1.css.map": "/portfolio/static/css/main.f9596df1.css.map",
-    "main.50e1dae6.js.map": "/portfolio/static/js/main.50e1dae6.js.map"
+    "main.d9e18fdd.css.map": "/portfolio/static/css/main.d9e18fdd.css.map",
+    "main.e4857fbe.js.map": "/portfolio/static/js/main.e4857fbe.js.map"
   },
   "entrypoints": [
-    "static/css/main.f9596df1.css",
-    "static/js/main.50e1dae6.js"
+    "static/css/main.d9e18fdd.css",
+    "static/js/main.e4857fbe.js"
   ]
 }
