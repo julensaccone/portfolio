@@ -1,6 +1,6 @@
 import "./_insertion.scss";
 
-const Insertion = ({ id, type, height, color, padding, children }) => {
+const Insertion = ({ id, classe, type, height, color, padding, children }) => {
   //type 1: container oblique to the left
   if (type === 1) {
     return (
@@ -8,7 +8,7 @@ const Insertion = ({ id, type, height, color, padding, children }) => {
         {/* <div id={id} className='upper-board left'></div> */}
         <div
           id={id}
-          className='insertion oblique-left'
+          className={"insertion oblique-left " + classe}
           style={{ height: height }}
         >
           {children}
@@ -17,16 +17,14 @@ const Insertion = ({ id, type, height, color, padding, children }) => {
       </>
     );
   }
-  //type 2: container oblique to the right
+  //type 2: container v shape
   else if (type === 2) {
     return (
       <>
         {/* <div className='upper-board right'></div> */}
         <div
           id={id}
-          className={
-            color === "light" ? "insertion light" : "insertion dark v-shape"
-          }
+          className={"insertion v-shape " + classe}
           style={{ height: height }}
         >
           {children}
@@ -40,7 +38,7 @@ const Insertion = ({ id, type, height, color, padding, children }) => {
     return (
       <div
         id={id}
-        className={color === "light" ? "insertion light" : "insertion dark"}
+        className={"insertion " + classe}
         style={{ height: height, padding: padding }}
       >
         {children}

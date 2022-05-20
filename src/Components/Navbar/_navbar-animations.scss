@@ -6,6 +6,23 @@
     transform: translateX(0) translateY(0) scale(0.3);
   }
 }
+@keyframes logoShiftingTablet {
+  0% {
+    transform: translateX(27rem) translateY(20.5rem);
+  }
+  100% {
+    transform: translateX(0) translateY(0) scale(0.3);
+  }
+}
+@keyframes logoShiftingMobile {
+  0% {
+    transform: translateX(20rem) translateY(20.5rem);
+  }
+  100% {
+    transform: translateX(0) translateY(0) scale(0.3);
+  }
+}
+
 @keyframes bounceDown {
   0% {
     transform: translateY(-0.5rem);

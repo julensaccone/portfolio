@@ -69,7 +69,7 @@ function Homepage() {
         <a className='circle'>.</a>
         <a className='circle'>.</a>
       </div> */}
-      <Insertion id='parallax' type={1} color='dark'>
+      <Insertion id='parallax' classe='heading' type={1} color='dark'>
         <div className='heading'>
           <div className='greetings'>
             <h1 className='introduction fade-in'>Hi, I'm</h1>
@@ -88,7 +88,7 @@ function Homepage() {
           <HiArrowCircleUp />
         </IconContext.Provider>
       </a>
-      <Insertion id='About_me' height='80rem' color='light'>
+      <Insertion id='About_me' classe='about-me' height='80rem' color='light'>
         <div className='container container1'>
           <h3>About me</h3>
           <div className='description'>
@@ -132,7 +132,7 @@ function Homepage() {
           </div>
         </div>
       </Insertion>
-      <Insertion id='Skills' type={2} height='50rem' color='dark'>
+      <Insertion id='Skills' classe='skills' type={2} color='dark'>
         <div className='container container2'>
           <h3 className='container-title'>Skills</h3>
           <div className='skill-list'>
@@ -154,7 +154,7 @@ function Homepage() {
           </div>
         </div>
       </Insertion>
-      <Insertion id='Projects' height='50rem' color='light'>
+      <Insertion id='Projects' classe='projects' height='auto' color='light'>
         <div className='container container3'>
           <h3>Projects</h3>
           <div className='cards'>
@@ -181,8 +181,9 @@ function Homepage() {
       </Insertion>
       <Insertion
         id='Contact'
+        classe='contacts'
         type={3}
-        height='7rem'
+        height='auto'
         color='dark'
         padding='1rem'
       >
@@ -242,16 +243,6 @@ function Homepage() {
   );
 }
 
-// const Social = ({ icon, name, iconName }) => {
-//   return (
-//     <button className='button'>
-//       <div className='icon'>
-//         <img src={icon} alt='logo' />
-//       </div>
-//       <span>{name}</span>
-//     </button>
-//   );
-// };
 const Skill = ({ skill, style, pathImage }) => {
   return (
     <div className='skill' style={style}>

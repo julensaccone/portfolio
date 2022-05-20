@@ -22,6 +22,7 @@ nav {
     right: 3rem;
     display: flex;
     .navbar-link {
+      display: block;
       margin-left: 3.5rem;
       text-decoration: none;
       color: #3e3e3e;
@@ -71,5 +72,161 @@ nav {
     .navbar-link:nth-of-type(4) {
       animation-delay: 3.7s;
     }
+
+    .burger {
+      display: none;
+    }
   }
+}
+
+@media (max-width: 1069px) {
+  nav {
+    .logo-js {
+      z-index: 600;
+      position: absolute;
+      animation-name: logoShiftingMobile;
+      animation-duration: 2s;
+      animation-fill-mode: both;
+      animation-delay: 2s;
+    }
+    section {
+      width: 2.5rem;
+      height: 2.5rem;
+      .navbar-link {
+        display: none;
+      }
+      .burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 100%;
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        z-index: 700;
+        cursor: pointer;
+        .burger-top-line,
+        .burger-mid-line,
+        .burger-bottom-line {
+          position: relative;
+          width: 100%;
+          height: 4px;
+          background-color: #3e3e3e;
+          margin-top: 2px;
+          border-radius: 10px;
+        }
+        .burger-top-line {
+          transform: rotate(0) translate(0);
+          transition: 0.2s all ease-out;
+        }
+        .burger-mid-line {
+          display: block;
+          transition: 0.2s all ease-out;
+        }
+        .burger-bottom-line {
+          transform: rotate(0) translate(0);
+          transition: 0.2s all ease-out;
+        }
+
+        &:hover {
+          opacity: 0.7;
+        }
+
+        &.active {
+          .burger-top-line {
+            background-color: #fff;
+            transform: rotate(45deg) translate(0.5rem, 0.5rem);
+            transition: 0.2s all ease-out;
+          }
+          .burger-mid-line {
+            background-color: #fff;
+            display: none;
+            transition: 0.2s all ease-out 0.2s;
+          }
+          .burger-bottom-line {
+            background-color: #fff;
+            transform: rotate(-45deg) translate(0.1rem, -0.25rem);
+            transition: 0.2s all ease-out;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: "833px") {
+  nav.logo-js {
+    z-index: 600;
+    position: absolute;
+    animation-name: logoShiftingMobile;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    animation-delay: 2s;
+  }
+}
+
+.drop-down-menu {
+  height: 100%;
+  overflow: hidden;
+  background-color: #3e3e3e;
+  color: #fff;
+  width: 100%;
+  position: absolute;
+  top: 8rem;
+  z-index: 500;
+  transform: translateY(-1000px);
+  transition: 0.3s all ease-out;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ul {
+    margin-top: -10rem;
+    list-style: none;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    .menu-link {
+      text-decoration: none;
+      color: #fff;
+      li {
+        text-align: center;
+        margin-bottom: 2rem;
+        border-bottom: 2px solid #fff;
+        height: 6rem;
+        display: flex;
+        align-items: end;
+        padding-bottom: 1rem;
+        cursor: pointer;
+        border-radius: 10px;
+        &:hover {
+          opacity: 0.9;
+          background-color: #4a4a4a;
+        }
+
+        h2 {
+          font-size: 2.5rem;
+          width: 100%;
+        }
+        h2::before {
+          content: "<";
+          color: #ffc800;
+        }
+        h2::after {
+          content: "/>";
+          color: #ffc800;
+        }
+      }
+    }
+  }
+  &.active {
+    transform: translateY(0);
+    transition: 0.5s all ease-out;
+  }
+}
+
+nav.active {
+  background-color: #3e3e3e;
+  transition: 0.5s all ease-out;
 }
