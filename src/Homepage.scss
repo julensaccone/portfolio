@@ -182,7 +182,11 @@ h3::after {
   }
 
   @media (max-width: 768px) {
-    right: 1rem;
+    right: 0.5rem;
+    svg {
+      width: 4rem;
+      height: 4rem;
+    }
   }
 }
 
