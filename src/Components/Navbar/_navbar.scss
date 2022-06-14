@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Coda+Caption&display=swap");
-@import "./navbar-animations";
+@import url('https://fonts.googleapis.com/css2?family=Coda+Caption&display=swap');
+@import './navbar-animations';
 nav {
   height: 9rem;
   width: 100%;
@@ -17,7 +17,7 @@ nav {
     cursor: pointer;
   }
   section {
-    width: 50rem;
+    // width: 50rem;
     position: absolute;
     right: 3rem;
     display: flex;
@@ -50,12 +50,19 @@ nav {
         animation-fill-mode: forwards;
       }
       h2::before {
-        content: "<";
+        content: '<';
         color: #ffc800;
       }
       h2::after {
-        content: "/>";
+        content: '/>';
         color: #ffc800;
+      }
+
+      @media (max-width: 1000px) {
+        margin-left: 2rem;
+      }
+      @media (max-width: 833px) {
+        margin-left: 1rem;
       }
     }
 
@@ -79,19 +86,44 @@ nav {
   }
 }
 
-@media (max-width: 1069px) {
+@media (max-width: 1200px) {
   nav {
     .logo-js {
       z-index: 600;
       position: absolute;
-      animation-name: logoShiftingMobile;
+      animation-name: logoShiftingDesktop;
+      animation-duration: 2s;
+      animation-fill-mode: both;
+      animation-delay: 2s;
+    }
+  }
+}
+@media (max-width: 1024px) {
+  nav {
+    .logo-js {
+      z-index: 600;
+      position: absolute;
+      animation-name: logoShiftingLaptop;
+      animation-duration: 2s;
+      animation-fill-mode: both;
+      animation-delay: 2s;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    .logo-js {
+      z-index: 600;
+      position: absolute;
+      animation-name: logoShiftingTablet;
       animation-duration: 2s;
       animation-fill-mode: both;
       animation-delay: 2s;
     }
     section {
-      width: 2.5rem;
-      height: 2.5rem;
+      width: 2rem;
+      height: 2rem;
       .navbar-link {
         display: none;
       }
@@ -135,7 +167,7 @@ nav {
         &.active {
           .burger-top-line {
             background-color: #fff;
-            transform: rotate(45deg) translate(0.5rem, 0.5rem);
+            transform: rotate(45deg) translate(0.38rem, 0.5rem);
             transition: 0.2s all ease-out;
           }
           .burger-mid-line {
@@ -154,8 +186,8 @@ nav {
   }
 }
 
-@media (max-width: "833px") {
-  nav.logo-js {
+@media (max-width: 480px) {
+  nav .logo-js {
     z-index: 600;
     position: absolute;
     animation-name: logoShiftingMobile;
@@ -168,7 +200,7 @@ nav {
 .drop-down-menu {
   height: 100%;
   overflow: hidden;
-  background-color: #3e3e3e;
+  background-color: #343131;
   color: #fff;
   width: 100%;
   position: absolute;
@@ -194,27 +226,27 @@ nav {
         text-align: center;
         margin-bottom: 2rem;
         border-bottom: 2px solid #fff;
-        height: 6rem;
+        height: 4rem;
         display: flex;
         align-items: flex-end;
         padding-bottom: 1rem;
         cursor: pointer;
-        border-radius: 10px;
+        border-radius: 6px;
         &:hover {
           opacity: 0.9;
           background-color: #4a4a4a;
         }
 
         h2 {
-          font-size: 2.5rem;
+          font-size: 1.8rem;
           width: 100%;
         }
         h2::before {
-          content: "<";
+          content: '<';
           color: #ffc800;
         }
         h2::after {
-          content: "/>";
+          content: '/>';
           color: #ffc800;
         }
       }
@@ -227,6 +259,6 @@ nav {
 }
 
 nav.active {
-  background-color: #3e3e3e;
+  background-color: #343131;
   transition: 0.5s all ease-out;
 }

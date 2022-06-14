@@ -1,64 +1,64 @@
-import "./Homepage.scss";
-import Navbar from "./Components/Navbar/Navbar";
-import Insertion from "./Components/Insertions/Insertion";
-import { HiArrowCircleUp } from "react-icons/hi";
-import { IconContext } from "react-icons";
-import profilePic from "./images/profile-pic.jpg";
-import htmlLogo from "./images/HTML5_logo.png";
-import CSSLogo from "./images/CSS3_logo.svg";
-import JavaScriptLogo from "./images/JavaScript_logo.png";
-import ReactLogo from "./images/React_logo.png";
-import italy from "./images/italy.png";
-import spain from "./images/spain.png";
-import uk from "./images/uk.png";
-import appleRemakeProject from "./images/apple_website_remake.png";
-import parallax from "./images/parallax_background1.jpg";
-import pdf from "./files/JulenSaccone_Resume.pdf";
-import optimalHeapsort from "./images/optimalHeapsort.png";
+import './Homepage.scss';
+import Navbar from './Components/Navbar/Navbar';
+import Insertion from './Components/Insertions/Insertion';
+import { HiArrowCircleUp } from 'react-icons/hi';
+import { IconContext } from 'react-icons';
+import profilePic from './images/profile-pic.jpg';
+import htmlLogo from './images/HTML5_logo.png';
+import CSSLogo from './images/CSS3_logo.svg';
+import JavaScriptLogo from './images/JavaScript_logo.png';
+import ReactLogo from './images/React_logo.png';
+import italy from './images/italy.png';
+import spain from './images/spain.png';
+import uk from './images/uk.png';
+import appleRemakeProject from './images/apple_website_remake.png';
+import parallax from './images/parallax_background1.jpg';
+import pdf from './files/JulenSaccone_Resume.pdf';
+import optimalHeapsort from './images/optimalHeapsort.png';
 
-let self = "#";
+let self = '#';
 
 function Homepage() {
   //Get the button
   window.onload = function () {
-    const parallax = document.getElementById("Skills");
+    const parallax = document.getElementById('Skills');
     console.log(parallax);
     // When the user scrolls down 20px from the top of the document, show the button
-    window.addEventListener("scroll", function () {
+    window.addEventListener('scroll', function () {
       let offset = window.pageYOffset;
-      console.log("Offset: " + offset);
-      parallax.style.backgroundPositionY = offset * 0.7 + "px";
+      console.log('Offset: ' + offset);
+      parallax.style.backgroundPositionY = offset * 0.7 + 'px';
     });
   };
 
   function reveal() {
-    var container1 = document.querySelectorAll(".container");
+    var container1 = document.querySelectorAll('.container');
     let docElem = document.documentElement,
       docBody = document.body,
-      scrollTop = docElem["scrollTop"] || docBody["scrollTop"],
+      scrollTop = docElem['scrollTop'] || docBody['scrollTop'],
       scrollBottom =
-        (docElem["scrollHeight"] || docBody["scrollHeight"]) -
+        (docElem['scrollHeight'] || docBody['scrollHeight']) -
         window.innerHeight,
-      scrollPercent = (scrollTop / scrollBottom) * 100 + "%";
+      scrollPercent = (scrollTop / scrollBottom) * 100 + '%';
     console.log(scrollPercent);
 
     document
-      .getElementById("progress-bar")
-      .style.setProperty("--scrollAmount", scrollPercent);
+      .getElementById('progress-bar')
+      .style.setProperty('--scrollAmount', scrollPercent);
 
     for (var i = 0; i < container1.length; i++) {
       var windowHeight = window.innerHeight;
       var elementTop = container1[i].getBoundingClientRect().top;
       var elementVisible = 300;
       if (elementTop < windowHeight - elementVisible) {
-        container1[i].classList.add("active");
+        container1[i].classList.add('active');
       } else {
-        container1[i].classList.remove("active");
+        container1[i].classList.remove('active');
       }
     }
   }
 
-  window.addEventListener("scroll", reveal);
+  window.addEventListener('scroll', reveal);
 
   return (
     <>
@@ -84,7 +84,7 @@ function Homepage() {
         </div>
       </Insertion>
       <a href={self} id='back-to-top' className='back-to-top'>
-        <IconContext.Provider value={{ color: "#ffc800", size: "5rem" }}>
+        <IconContext.Provider value={{ color: '#ffc800', size: '5rem' }}>
           <HiArrowCircleUp />
         </IconContext.Provider>
       </a>
@@ -102,33 +102,49 @@ function Homepage() {
               graduated at University of Milan (Italy) and after that I focused
               on front end web developing.
             </article>
-            <div className='list languages'>
+            <div className='list array languages'>
               <h4>Languages =</h4>
-              <ul>
-                <li>
+              <ul className='list-ul'>
+                <li className='list-li'>
                   <img className='flags' src={italy} alt='Italian flag' />
                   <p>Italian</p>
                 </li>
-                <li>
+                <li className='list-li'>
                   <img className='flags' src={spain} alt='Spanish flag' />
                   <p>Spanish</p>
                 </li>
-                <li>
+                <li className='list-li'>
                   <img className='flags' src={uk} alt='English flag' />
                   <p>English</p>
                 </li>
               </ul>
             </div>
-            <div className='list hobbies'>
+            <div className='list object hobbies'>
               <h4>Hobbies =</h4>
-              <ul>
-                <li>Sport: Football, Gym</li>
-                <li>Art: Music, Drawing, Photography, Cinema</li>
-                <li>Gaming</li>
-                <li>Travel</li>
+              <ul className='list-ul'>
+                <li className='list-li'>
+                  <div>
+                    Sport:
+                    <ul>
+                      <li>Football</li> <li>Gym</li>
+                    </ul>
+                  </div>
+                </li>
+                <li className='list-li'>
+                  <div>
+                    Art:
+                    <ul>
+                      <li>Music</li>
+                      <li>Drawing</li>
+                      <li>Photography</li>
+                      <li>Cinema</li>
+                    </ul>
+                  </div>
+                </li>
+                <li className='list-li'>Gaming</li>
+                <li className='list-li'>Travel</li>
               </ul>
             </div>
-            {/* </section> */}
           </div>
         </div>
       </Insertion>
@@ -167,6 +183,7 @@ function Homepage() {
 
             <Card
               link='https://github.com/julensaccone/apple_web_site_react'
+              link2='https://apple-reactclone-homepage.netlify.app/'
               imagePath={appleRemakeProject}
               cardTitle='Apple website'
               cardText='A remake of apple website but using React.'
@@ -254,25 +271,37 @@ const Skill = ({ skill, style, pathImage }) => {
   );
 };
 
-const Card = ({ link, imagePath, cardTitle, cardText }) => {
+const Card = ({ link, imagePath, cardTitle, cardText, link2 }) => {
   return (
     <div className='card'>
       <img src={imagePath} alt={link} />
       <div className='card-description'>
         <h5>{cardTitle}</h5>
         <p>{cardText}</p>
-        <a
-          onClick={() => {
-            if (!link) {
-              window.alert("Still working on it...");
-            }
-          }}
-          href={link}
-          target='_blank'
-          rel='noopener noreferrer'
+        <div
+          className='buttons'
+          style={{ justifyContent: link2 ? 'space-between' : 'center' }}
         >
-          Open Project
-        </a>
+          <a
+            onClick={() => {
+              if (!link) {
+                window.alert('Still working on it...');
+              }
+            }}
+            href={link}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            Open Project
+          </a>
+          {link2 ? (
+            <a href={link2} target='_blank' rel='noopener noreferrer'>
+              Open Website
+            </a>
+          ) : (
+            ''
+          )}
+        </div>
       </div>
     </div>
   );
