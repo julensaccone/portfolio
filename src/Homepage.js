@@ -219,12 +219,17 @@ function Homepage() {
               </div>
               <span>Resume</span>
             </a>
-            <div className='button'>
+            <a
+              href='https://www.linkedin.com/in/julensaccone/'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='button'
+            >
               <div className='icon'>
                 <i className='fa-brands fa-linkedin fa-lg'></i>
               </div>
               <span>LinkedIn</span>
-            </div>
+            </a>
             <a
               href='mailto:julen.saccone@gmail.com'
               target='_blank'
